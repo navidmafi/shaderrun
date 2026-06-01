@@ -7,6 +7,7 @@
 #include <time.h>
 #include <errno.h>
 
+// TODO: use efsw. regular polling works for now tho
 char *read_file(const char *path)
 {
     FILE *f = fopen(path, "rb");
