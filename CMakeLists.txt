@@ -18,10 +18,8 @@ target_link_libraries(srun PRIVATE
     glad
     glfw
     OpenGL::GL
-    OpenGL::GLU
 )
 
-target_link_options(srun PRIVATE
-    -static-libgcc
-    -static-libstdc++
-)
+if(MINGW)
+target_link_options(srun PRIVATE -static-libgcc -static-libstdc++)
+endif()

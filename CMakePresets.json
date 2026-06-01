@@ -1,0 +1,27 @@
+{
+	"version": 3,
+	"cmakeMinimumRequired": { "major": 3, "minor": 20 },
+	"configurePresets": [
+		{
+			"name": "linux",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/linux"
+		},
+		{
+			"name": "mingw",
+			"generator": "Ninja",
+			"binaryDir": "${sourceDir}/build/mingw",
+			"toolchainFile": "${sourceDir}/cmake/toolchains/mingw-x86_64.cmake"
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "linux",
+			"configurePreset": "linux"
+		},
+		{
+			"name": "mingw",
+			"configurePreset": "mingw"
+		}
+	]
+}

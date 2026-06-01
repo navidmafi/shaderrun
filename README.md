@@ -10,16 +10,16 @@ cd shaderrun
 
 #---
 # Windows 
-cmake -B build -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-mingw.cmake
+cmake --preset mingw
+cmake --build --preset mingw
 
 # Linux
-cmake -B build 
+cmake --preset linux
+cmake --build --preset linux
 #---
-
-cmake --build build
 
 # Run the included demo
 
-./build/srun 1.frag
+./build/linux/srun demo.frag
 
 ```
